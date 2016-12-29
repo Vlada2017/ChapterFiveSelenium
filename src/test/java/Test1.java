@@ -1,9 +1,9 @@
-import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
+import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
@@ -20,7 +20,7 @@ public class Test1 {
     //element:last-child  This will locate the last element under the element.
     //element:nth-child(2)  This will locate the second child element under the element.
 
-    @Test
+    @Test//(dataProvider = "data")
     public void firstTest() throws InterruptedException {
         String username = "dpialexanders@gmail.com";
         String password = "Password1*";
@@ -50,5 +50,19 @@ public class Test1 {
 
         driver.quit();
     }
+    //add before method and after method annotations
 
+    /*
+    @DataProvider(name = "data")
+    public Object[][] data() {
+        Object[][] dataEmail = {
+                {},
+                {},
+                {}
+        };
+
+        return dataEmail;
+    }
+    */
+    //add in the separate class
 }
