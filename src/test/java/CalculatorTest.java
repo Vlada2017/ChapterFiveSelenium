@@ -3,6 +3,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -69,6 +71,8 @@ public class CalculatorTest {
 
         Assert.assertEquals("5", result.getAttribute("value"), "Result is not valid");
 
+        WebDriverWait waiter = new WebDriverWait(driver, 10);
+        waiter.until(ExpectedConditions.presenceOfElementLocated(By.id("")));
     }
 
     public void performOperation(WebDriver driver, By firstElement, By secondElement, By operation) {
