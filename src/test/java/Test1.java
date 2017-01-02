@@ -25,8 +25,8 @@ public class Test1 {
         String username = "dpialexanders@gmail.com";
         String password = "Password1*";
 
-        System.setProperty("webdriver.gecko.driver", "C:\\Program Files\\WEBDrivers\\FireFox\\geckodriver.exe");
-        System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\WEBDrivers\\Chrome\\chromedriver.exe");
+        System.setProperty("webdriver.gecko.driver", "C:\\WebDrivers\\geckodriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\WebDrivers\\chromedriver.exe");
         WebDriver driver = new FirefoxDriver();
         driver.get("http://gmail.com/");
         driver.manage().window().maximize();
