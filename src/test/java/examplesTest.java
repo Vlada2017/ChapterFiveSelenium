@@ -8,6 +8,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import static org.testng.Assert.assertTrue;
@@ -109,6 +110,28 @@ public class examplesTest {
     }
 
     @Test
+    public void frameTest() {
+        driver.findElement(By.linkText("Frames")).click();
+        driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+
+        driver.findElement(By.linkText("Nested Frames")).click();
+
+        List<WebElement> frames = driver.findElements(By.tagName("frame"));
+
+        //driver.switchTo().frame(driver.findElement(By.name("frame-bottom")));
+        driver.switchTo().frame(frames.get(1));
+        String text = driver.getPageSource();
+        String textFromBottomFrame = driver.findElement(By.tagName("body")).getText();
+
+                /*
+        driver.switchTo().frame(frames.get(0));
+        WebElement leftFrame = driver.findElement(By.name("frame-left"));
+        driver.switchTo().frame(leftFrame);
+        String textFromLeftFrame = driver.findElement(By.cssSelector("html > body")).getText();
+        */
+    }
+
+    @Test
     public void hoverTest() {
         driver.findElement(By.linkText("Hovers")).click();
         driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
@@ -191,7 +214,12 @@ public class examplesTest {
         move.dragAndDropBy(slider, 30, 0).build().perform();
     }
 
-    //frame, window, javascript!!!
+    @Test
+    public void javascriptTest() {
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        String title = (String)js.executeScript("return document.title");
+        long links = (Long) js.executeScript("var links = document.getElementsByTagName('a'); return links.length");
+    }
 
     @AfterMethod
     public void tearDown() {
