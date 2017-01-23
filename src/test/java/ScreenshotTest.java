@@ -3,7 +3,12 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+import ru.yandex.qatools.allure.annotations.Description;
+import ru.yandex.qatools.allure.annotations.Features;
+import ru.yandex.qatools.allure.annotations.Stories;
+import ru.yandex.qatools.allure.annotations.TestCaseId;
 
 import java.io.File;
 import java.io.IOException;
@@ -14,13 +19,18 @@ import java.util.concurrent.TimeUnit;
 /**
  * Created by AlexanderSavenok on 1/17/2017.
  */
+@Listeners(MyListener.class)
 public class ScreenshotTest {
 
     WebDriver driver;
 
     @Test
+    @TestCaseId("A-27")
+    @Features("Login")
+    @Stories("Story 1")
+    @Description("Test verifies login functionality with invalid credentials")
     public void testmail() throws InterruptedException, IOException {
-        System.setProperty("webdriver.gecko.driver", "C:\\Program Files\\WEBDrivers\\FireFox\\geckodriver.exe");
+        System.setProperty("webdriver.gecko.driver", "C:\\WebDrivers\\geckodriver.exe");
         driver = new FirefoxDriver();
 
         driver.get("https://mail.tut.by");
