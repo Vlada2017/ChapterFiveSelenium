@@ -39,7 +39,7 @@ public class CalculatorTest {
 
     @BeforeMethod
     public void setup() {
-        System.setProperty("webdriver.gecko.driver", "C:\\WebDrivers\\geckodriver.exe"); //change path in the IBA room
+        System.setProperty("webdriver.gecko.driver", "C:\\WebDrivers\\geckodriver.exe"); //change path in IT Step
         driver = new FirefoxDriver();
         driver.get("http://calc.by/");
         driver.manage().window().maximize();
@@ -60,7 +60,7 @@ public class CalculatorTest {
     }
 
     @Test
-    public void calculateMinus(){
+    public void calculateMinusTest(){
         driver.switchTo().frame(driver.findElement(By.id("standardCalc")));
 
         WebElement element = driver.findElement(RESULT_FIELD);

@@ -12,31 +12,31 @@ import java.util.List;
 @RunWith(Parameterized.class)
 public class jUnitTest {
 
-
-    int firstValue;
-    int secondValue;
-    int sum;
-
-    public jUnitTest(int firstValue, int secondValue, int sum) {
-        this.firstValue = firstValue;
-        this.secondValue = secondValue;
-        this.sum = sum;
-    }
-
-    @Test
-    public void verifySumTest() {
-        int result = firstValue + secondValue;
-        Assert.assertEquals(sum, result);
-    }
-
-    @Parameterized.Parameters
-    public static List<Object[]> isEmptyData() {
-        return Arrays.asList(new Object[][]{
-                {3, 7, 10},
-                {5, 6, 11},
-                {12, 15, 27},
-                {33, 12, 45},
-        });
-    }
+//
+//    int firstValue;
+//    int secondValue;
+//    int sum;
+//
+//    public jUnitTest(int firstValue, int secondValue, int sum) {
+//        this.firstValue = firstValue;
+//        this.secondValue = secondValue;
+//        this.sum = sum;
+//    }
+//
+//    @Test
+//    public void verifySumTest() {
+//        int result = firstValue + secondValue;
+//        Assert.assertEquals(sum, result);
+//    }
+//
+//    @Parameterized.Parameters
+//    public static List<Object[]> isEmptyData() {
+//        return Arrays.asList(new Object[][]{
+//                {3, 7, 10},
+//                {5, 6, 11},
+//                {12, 15, 27},
+//                {33, 12, 45},
+//        });
+//    }
 
 }

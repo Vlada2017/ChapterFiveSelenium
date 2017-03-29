@@ -19,7 +19,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * Created by AlexanderSavenok on 1/17/2017.
  */
-@Listeners(MyListener.class)
+//@Listeners(MyListener.class)
 public class ScreenshotTest {
 
     WebDriver driver;

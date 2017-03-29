@@ -8,7 +8,7 @@ import ru.yandex.qatools.allure.annotations.Attachment;
 /**
  * Created by Alexandor on 24.01.2017.
  */
-public class MyListener implements ITestListener {
+public class MyListener /*implements ITestListener*/ {
     public void onTestStart(ITestResult iTestResult) {
 
     }
